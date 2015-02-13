@@ -12,6 +12,8 @@
     <orderEntry type="module" module-name="jlib-core" />
     <orderEntry type="module" module-name="jlib-persistence" />
     <orderEntry type="module" module-name="jlib-persistence-jpa" />
+    <orderEntry type="module" module-name="jlib-basefunctions" />
+    <orderEntry type="library" name="Maven: javax.persistence:persistence-api:1.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:18.0" level="project" />
