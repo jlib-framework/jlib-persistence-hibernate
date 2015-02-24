@@ -81,7 +81,7 @@ implements ParameterizedType {
     throws InvalidUserTypeParameterValueException {
         try {
             final String enumClassName = getParameterValue(parameters, PARAMETERNAME_ENUM_CLASS_NAME);
-            enumClass = useClass(enumClassName).withType(IdEnum.class).assertSubtypeOf(Enum.class).getParametrized();
+            enumClass = useClass(enumClassName).withType(IdEnum.class).assertSubtypeOf(Enum.class).parametrizedType();
             enumValueIdentifierMethodName = getParameterValue(parameters, PARAMETERNAME_ENUM_VALUE_METHOD_NAME);
         }
         catch (final ClassInstanceException exception) {
