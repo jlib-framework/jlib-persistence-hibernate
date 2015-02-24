@@ -11,6 +11,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="jlib-codequality" />
     <orderEntry type="module" module-name="jlib-core" />
+    <orderEntry type="module" module-name="jlib-reflect" />
     <orderEntry type="module" module-name="jlib-persistence" />
     <orderEntry type="module" module-name="jlib-persistence-jpa" />
     <orderEntry type="module" module-name="jlib-basefunctions" />
