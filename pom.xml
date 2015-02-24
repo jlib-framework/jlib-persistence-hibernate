@@ -60,6 +60,11 @@
 
         <dependency>
             <groupId>org.jlib</groupId>
+            <artifactId>jlib-reflect</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jlib</groupId>
             <artifactId>jlib-persistence</artifactId>
         </dependency>
 
