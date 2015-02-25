@@ -17,11 +17,11 @@ import org.jlib.persistence.hibernate.usertype.InvalidUserTypeParametersExceptio
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.assertValidParametersCount;
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.getParameterValue;
 import org.jlib.persistence.jpa.IdEnum;
-import org.jlib.reflect.ClassInstanceException;
-import org.jlib.reflect.InvalidMethodException;
+import org.jlib.reflect.ClassException;
+import org.jlib.reflect.MethodException;
 import org.jlib.reflect.InvalidValueException;
 import static org.jlib.reflect.Reflectors.useClass;
-import org.jlib.reflect.WrongTypedInstanceException;
+import org.jlib.reflect.WrongTypedException;
 
 public class IdEnumCharUserType<EnumValue extends Enum<EnumValue> & IdEnum<Id>, Id extends Serializable>
 extends ImmutableOptionalSingleColumnUserType<EnumValue>
@@ -56,7 +56,7 @@ implements ParameterizedType {
                                       .invoke(enumValueId)
                                       .get();
         }
-        catch (final InvalidValueException | InvalidMethodException | WrongTypedInstanceException exception) {
+        catch (final InvalidValueException | MethodException | WrongTypedException exception) {
             throw new InvalidUserTypeParameterValueException(parameters, PARAMETERNAME_ENUM_VALUE_METHOD_NAME,
                                                              exception);
         }
@@ -84,7 +84,7 @@ implements ParameterizedType {
             enumClass = useClass(enumClassName).withType(IdEnum.class).assertSubtypeOf(Enum.class).parametrizedType();
             enumValueIdentifierMethodName = getParameterValue(parameters, PARAMETERNAME_ENUM_VALUE_METHOD_NAME);
         }
-        catch (final ClassInstanceException exception) {
+        catch (final ClassException exception) {
             throw new InvalidUserTypeParameterValueException(parameters, PARAMETERNAME_ENUM_CLASS_NAME, exception);
         }
     }
