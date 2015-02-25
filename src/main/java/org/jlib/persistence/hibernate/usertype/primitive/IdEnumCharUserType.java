@@ -17,11 +17,11 @@ import org.jlib.persistence.hibernate.usertype.InvalidUserTypeParametersExceptio
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.assertValidParametersCount;
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.getParameterValue;
 import org.jlib.persistence.jpa.IdEnum;
-import org.jlib.reflect.ClassException;
-import org.jlib.reflect.MethodException;
-import org.jlib.reflect.InvalidValueException;
+import org.jlib.reflect.programtarget.ClassException;
+import org.jlib.reflect.programtarget.MethodException;
+import org.jlib.reflect.programtarget.InvalidValueException;
 import static org.jlib.reflect.Reflectors.useClass;
-import org.jlib.reflect.WrongTypedException;
+import org.jlib.reflect.programtarget.WrongTypedException;
 
 public class IdEnumCharUserType<EnumValue extends Enum<EnumValue> & IdEnum<Id>, Id extends Serializable>
 extends ImmutableOptionalSingleColumnUserType<EnumValue>
