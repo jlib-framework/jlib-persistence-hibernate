@@ -19,7 +19,7 @@ import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.getParamet
 import org.jlib.persistence.jpa.IdEnum;
 import org.jlib.reflect.programtarget.ClassException;
 import org.jlib.reflect.programtarget.MethodException;
-import org.jlib.reflect.programtarget.InvalidValueException;
+import org.jlib.reflect.programtarget.InvalidMethodReturnValueException;
 import static org.jlib.reflect.reflector.Reflectors.useClass;
 import org.jlib.reflect.programtarget.NoSubtypeException;
 
@@ -56,7 +56,7 @@ implements ParameterizedType {
                                       .invoke(enumValueId)
                                       .get();
         }
-        catch (final InvalidValueException | MethodException | NoSubtypeException exception) {
+        catch (final InvalidMethodReturnValueException | MethodException | NoSubtypeException exception) {
             throw new InvalidUserTypeParameterValueException(parameters, PARAMETERNAME_ENUM_VALUE_METHOD_NAME,
                                                              exception);
         }
