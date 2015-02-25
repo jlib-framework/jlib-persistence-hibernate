@@ -21,7 +21,7 @@ import org.jlib.reflect.programtarget.ClassException;
 import org.jlib.reflect.programtarget.MethodException;
 import org.jlib.reflect.programtarget.InvalidValueException;
 import static org.jlib.reflect.reflector.Reflectors.useClass;
-import org.jlib.reflect.programtarget.WrongTypedException;
+import org.jlib.reflect.programtarget.NoSubtypeException;
 
 public class IdEnumCharUserType<EnumValue extends Enum<EnumValue> & IdEnum<Id>, Id extends Serializable>
 extends ImmutableOptionalSingleColumnUserType<EnumValue>
@@ -56,7 +56,7 @@ implements ParameterizedType {
                                       .invoke(enumValueId)
                                       .get();
         }
-        catch (final InvalidValueException | MethodException | WrongTypedException exception) {
+        catch (final InvalidValueException | MethodException | NoSubtypeException exception) {
             throw new InvalidUserTypeParameterValueException(parameters, PARAMETERNAME_ENUM_VALUE_METHOD_NAME,
                                                              exception);
         }
