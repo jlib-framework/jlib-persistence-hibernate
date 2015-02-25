@@ -20,7 +20,7 @@ import org.jlib.persistence.jpa.IdEnum;
 import org.jlib.reflect.programtarget.ClassException;
 import org.jlib.reflect.programtarget.MethodException;
 import org.jlib.reflect.programtarget.InvalidValueException;
-import static org.jlib.reflect.Reflectors.useClass;
+import static org.jlib.reflect.reflector.Reflectors.useClass;
 import org.jlib.reflect.programtarget.WrongTypedException;
 
 public class IdEnumCharUserType<EnumValue extends Enum<EnumValue> & IdEnum<Id>, Id extends Serializable>
