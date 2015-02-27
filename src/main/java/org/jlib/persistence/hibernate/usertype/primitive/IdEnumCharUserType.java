@@ -18,7 +18,7 @@ import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.assertVali
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.getParameterValue;
 import org.jlib.persistence.jpa.IdEnum;
 import org.jlib.reflect.programtarget.ClassException;
-import org.jlib.reflect.programtarget.MethodException;
+import org.jlib.reflect.programtarget.MethodLookupException;
 import org.jlib.reflect.programtarget.InvalidMethodReturnValueException;
 import static org.jlib.reflect.reflector.Reflectors.useClass;
 import org.jlib.reflect.programtarget.NoSubtypeException;
@@ -52,11 +52,11 @@ implements ParameterizedType {
             final Object enumValueId = resultSet.getObject(columnName);
             return useClass(enumClass).useStaticMethod(enumValueIdentifierMethodName)
                                       .withReturnType(enumClass)
-                                      .withArgumentTypes(Object.class)
+                                      .withParameterTypes(Object.class)
                                       .invoke(enumValueId)
                                       .get();
         }
-        catch (final InvalidMethodReturnValueException | MethodException | NoSubtypeException exception) {
+        catch (final InvalidMethodReturnValueException | MethodLookupException | NoSubtypeException exception) {
             throw new InvalidUserTypeParameterValueException(parameters, PARAMETERNAME_ENUM_VALUE_METHOD_NAME,
                                                              exception);
         }
@@ -81,7 +81,7 @@ implements ParameterizedType {
     throws InvalidUserTypeParameterValueException {
         try {
             final String enumClassName = getParameterValue(parameters, PARAMETERNAME_ENUM_CLASS_NAME);
-            enumClass = useClass(enumClassName).withType(IdEnum.class).assertSubtypeOf(Enum.class).parametrizedType();
+            enumClass = useClass(enumClassName).withType(IdEnum.class).assertSubtypeOf(Enum.class).downcast();
             enumValueIdentifierMethodName = getParameterValue(parameters, PARAMETERNAME_ENUM_VALUE_METHOD_NAME);
         }
         catch (final ClassException exception) {
