@@ -18,10 +18,8 @@ import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.assertVali
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.getParameterValue;
 import org.jlib.persistence.jpa.IdEnum;
 import org.jlib.reflect.programtarget.ClassException;
-import org.jlib.reflect.programtarget.MethodLookupException;
-import org.jlib.reflect.programtarget.InvalidMethodReturnValueException;
-import static org.jlib.reflect.reflectordefaults.DefaultReflectors.useClass;
-import org.jlib.reflect.programtarget.NoSubtypeException;
+import org.jlib.reflect.programtarget.ProgramTargetException;
+import static org.jlib.reflect.reflectordefaults.DefaultReflectorUtility.useClass;
 
 public class IdEnumCharUserType<EnumValue extends Enum<EnumValue> & IdEnum<Id>, Id extends Serializable>
 extends ImmutableOptionalSingleColumnUserType<EnumValue>
@@ -56,7 +54,7 @@ implements ParameterizedType {
                                       .invoke(enumValueId)
                                       .get();
         }
-        catch (final InvalidMethodReturnValueException | MethodLookupException | NoSubtypeException exception) {
+        catch (final ProgramTargetException exception) {
             throw new InvalidUserTypeParameterValueException(parameters, PARAMETERNAME_ENUM_VALUE_METHOD_NAME,
                                                              exception);
         }
