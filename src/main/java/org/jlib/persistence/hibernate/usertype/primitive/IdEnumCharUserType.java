@@ -17,7 +17,7 @@ import org.jlib.persistence.hibernate.usertype.InvalidUserTypeParametersExceptio
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.assertValidParametersCount;
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.getParameterValue;
 import org.jlib.persistence.jpa.IdEnum;
-import org.jlib.reflect.programtarget.ProgramTargetException;
+import org.jlib.reflect.programelement.ProgramTargetException;
 import static org.jlib.reflect.reflector.defaults.DefaultReflectorUtility.useClass;
 
 public class IdEnumCharUserType<EnumValue extends Enum<EnumValue> & IdEnum<Id>, Id extends Serializable>
