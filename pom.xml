@@ -50,17 +50,7 @@
     <dependencies>
         <dependency>
             <groupId>org.jlib</groupId>
-            <artifactId>jlib-codequality</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jlib</groupId>
-            <artifactId>jlib-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jlib</groupId>
-            <artifactId>jlib-reflect</artifactId>
+            <artifactId>jlib-exception</artifactId>
         </dependency>
 
         <dependency>
@@ -70,53 +60,13 @@
 
         <dependency>
             <groupId>org.jlib</groupId>
-            <artifactId>jlib-persistence-jpa</artifactId>
+            <artifactId>jlib-reflect</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.checkerframework</groupId>
-            <artifactId>checker-qual</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-        </dependency>
-
     </dependencies>
+
 </project>

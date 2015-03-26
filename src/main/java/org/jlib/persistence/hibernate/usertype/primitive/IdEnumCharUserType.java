@@ -16,7 +16,7 @@ import org.jlib.persistence.hibernate.usertype.InvalidUserTypeParameterValueExce
 import org.jlib.persistence.hibernate.usertype.InvalidUserTypeParametersException;
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.assertValidParametersCount;
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.getParameterValue;
-import org.jlib.persistence.jpa.IdEnum;
+import org.jlib.persistence.IdEnum;
 import org.jlib.reflect.programelement.ProgramElementException;
 import static org.jlib.reflect.reflector.defaults.DefaultReflectorUtility.useClass;
 

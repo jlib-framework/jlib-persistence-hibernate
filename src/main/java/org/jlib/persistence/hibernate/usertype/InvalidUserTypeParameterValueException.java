@@ -2,7 +2,7 @@ package org.jlib.persistence.hibernate.usertype;
 
 import java.util.Properties;
 
-import static org.jlib.core.message.MessageUtility.message;
+import static org.jlib.message.MessageUtility.message;
 
 public class InvalidUserTypeParameterValueException
 extends InvalidUserTypeParametersException {

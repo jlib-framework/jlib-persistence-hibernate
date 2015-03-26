@@ -2,8 +2,8 @@ package org.jlib.persistence.hibernate.usertype;
 
 import java.util.Properties;
 
-import org.jlib.core.exception.InvalidStateException;
-import org.jlib.core.message.Message;
+import org.jlib.exception.InvalidStateException;
+import org.jlib.message.Message;
 
 public abstract class InvalidUserTypeParametersException
 extends InvalidStateException {
