@@ -1,6 +1,6 @@
 package org.jlib.persistence.hibernate;
 
-import org.jlib.core.message.Message;
+import org.jlib.message.Message;
 
 import org.hibernate.type.SerializationException;
 

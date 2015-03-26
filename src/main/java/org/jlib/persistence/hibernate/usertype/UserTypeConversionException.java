@@ -1,6 +1,6 @@
 package org.jlib.persistence.hibernate.usertype;
 
-import org.jlib.core.message.Message;
+import org.jlib.message.Message;
 
 import org.jlib.persistence.hibernate.JlibHibernateException;
 
