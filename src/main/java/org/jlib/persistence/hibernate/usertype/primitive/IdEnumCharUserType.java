@@ -39,7 +39,7 @@ import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.assertVali
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.getParameterValue;
 import org.jlib.persistence.IdEnum;
 import org.jlib.reflect.programelement.ProgramElementException;
-import static org.jlib.reflect.reflector.defaults.DefaultReflectorUtility.useClass;
+import static org.jlib.reflect.reflector.defaults.Reflectors.useClass;
 
 public class IdEnumCharUserType<EnumValue extends Enum<EnumValue> & IdEnum<Id>, Id extends Serializable>
 extends ImmutableOptionalSingleColumnUserType<EnumValue>
