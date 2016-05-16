@@ -21,12 +21,11 @@
 
 package org.jlib.persistence.hibernate;
 
+import org.hibernate.HibernateException;
 import org.jlib.message.Message;
 
-import org.hibernate.HibernateException;
-
 public class JlibHibernateException
-extends HibernateException {
+    extends HibernateException {
 
     private static final long serialVersionUID = 7870050394976364600L;
 

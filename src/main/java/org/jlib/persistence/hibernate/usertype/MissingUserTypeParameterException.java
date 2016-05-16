@@ -23,10 +23,10 @@ package org.jlib.persistence.hibernate.usertype;
 
 import java.util.Properties;
 
-import static org.jlib.message.MessageUtility.message;
+import static org.jlib.message.Messages.message;
 
 public class MissingUserTypeParameterException
-extends InvalidUserTypeParametersException {
+    extends InvalidUserTypeParametersException {
 
     private static final long serialVersionUID = 5471808293209091513L;
 

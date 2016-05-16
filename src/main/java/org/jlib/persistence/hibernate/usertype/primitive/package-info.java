@@ -20,9 +20,9 @@
  */
 
 @TypeDefs({
-          @TypeDef(name = ID_ENUM_CHAR, typeClass = IdEnumCharUserType.class)
+    @TypeDef(name = ID_ENUM_CHAR, typeClass = IdEnumCharUserType.class)
 })//
-package org.jlib.persistence.hibernate.usertype.primitive;
+    package org.jlib.persistence.hibernate.usertype.primitive;
 
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;

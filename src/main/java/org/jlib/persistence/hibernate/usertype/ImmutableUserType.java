@@ -32,7 +32,7 @@ import org.hibernate.engine.spi.SessionImplementor;
 import org.hibernate.usertype.UserType;
 
 public abstract class ImmutableUserType<Value extends Serializable>
-implements UserType {
+    implements UserType {
 
     protected ImmutableUserType() {}
 
@@ -40,10 +40,10 @@ implements UserType {
     public abstract Class<Value> returnedClass();
 
     protected abstract Value nullSafeGet(ResultSet resultSet, String[] columnNames)
-    throws HibernateException, SQLException;
+        throws HibernateException, SQLException;
 
     protected abstract void nullSafeSet(PreparedStatement preparedStatement, Value value, int index)
-    throws HibernateException, SQLException;
+        throws HibernateException, SQLException;
 
     @Override
     public Object replace(final Object original, final Object target, final Object owner) {
@@ -58,7 +58,7 @@ implements UserType {
     @Override
     public Value nullSafeGet(final ResultSet resultSet, final String[] columnNames,
                              final SessionImplementor sessionImplementor, final Object containingEntity)
-    throws HibernateException, SQLException {
+        throws HibernateException, SQLException {
         return nullSafeGet(resultSet, columnNames);
     }
 
@@ -66,7 +66,7 @@ implements UserType {
     @SuppressWarnings("unchecked")
     public void nullSafeSet(final PreparedStatement preparedStatement, final Object value, final int columnIndex,
                             final SessionImplementor sessionImplementor)
-    throws HibernateException, SQLException {
+        throws HibernateException, SQLException {
         nullSafeSet(preparedStatement, (Value) value, columnIndex);
     }
 
