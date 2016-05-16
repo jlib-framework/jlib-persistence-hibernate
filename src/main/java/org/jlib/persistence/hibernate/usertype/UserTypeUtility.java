@@ -25,14 +25,16 @@ import java.util.Properties;
 
 public final class UserTypeUtility {
 
+    private UserTypeUtility() {}
+
     public static void assertValidParametersCount(final Properties parameters, final int expectedParametersCount)
-    throws InvalidUserTypeParametersCountException {
+        throws InvalidUserTypeParametersCountException {
         if (parameters.size() != expectedParametersCount)
             throw new InvalidUserTypeParametersCountException(parameters, expectedParametersCount);
     }
 
     public static String getParameterValue(final Properties parameters, final String parameterName)
-    throws MissingUserTypeParameterException {
+        throws MissingUserTypeParameterException {
         final String parameterValue = parameters.getProperty(parameterName);
 
         if (parameterValue == null)
@@ -40,6 +42,4 @@ public final class UserTypeUtility {
 
         return parameterValue;
     }
-
-    private UserTypeUtility() {}
 }

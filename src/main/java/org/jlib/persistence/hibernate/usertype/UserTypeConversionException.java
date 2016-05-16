@@ -22,11 +22,10 @@
 package org.jlib.persistence.hibernate.usertype;
 
 import org.jlib.message.Message;
-
 import org.jlib.persistence.hibernate.JlibHibernateException;
 
 public class UserTypeConversionException
-extends JlibHibernateException {
+    extends JlibHibernateException {
 
     private static final long serialVersionUID = 7383877450249912912L;
 

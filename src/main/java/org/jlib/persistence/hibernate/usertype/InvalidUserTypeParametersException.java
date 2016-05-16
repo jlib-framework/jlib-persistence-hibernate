@@ -27,7 +27,7 @@ import org.jlib.exception.InvalidStateException;
 import org.jlib.message.Message;
 
 public abstract class InvalidUserTypeParametersException
-extends InvalidStateException {
+    extends InvalidStateException {
 
     private static final long serialVersionUID = 109106908837305142L;
 
