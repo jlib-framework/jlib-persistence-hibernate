@@ -13,7 +13,7 @@
     <orderEntry type="module" module-name="jlib-codequality" />
     <orderEntry type="module" module-name="jlib-message" />
     <orderEntry type="module" module-name="jlib-value" />
-    <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:1.8.10" level="project" />
+    <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:2.0.0" level="project" />
     <orderEntry type="module" module-name="jlib-persistence" />
     <orderEntry type="module" module-name="jlib-reflect" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:4.3.8.Final" level="project" />
