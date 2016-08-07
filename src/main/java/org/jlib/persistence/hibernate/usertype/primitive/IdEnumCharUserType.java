@@ -68,11 +68,11 @@ public class IdEnumCharUserType<EnumValue extends Enum<EnumValue> & IdEnum<Id>, 
         try {
             // TODO: verify correct use
             final Object enumValueId = resultSet.getObject(columnName);
-            return useClass(enumClass).useStaticMethod(enumValueIdentifierMethodName)
+            return useClass(enumClass).staticMethod(enumValueIdentifierMethodName)
                                       .withReturnType(enumClass)
                                       .withParameterTypes(Object.class)
                                       .invoke(enumValueId)
-                                      .get();
+                                      .getReturned();
         }
         catch (final ProgramElementException exception) {
             throw new InvalidUserTypeParameterValueException(parameters, PARAMETERNAME_ENUM_VALUE_METHOD_NAME,
