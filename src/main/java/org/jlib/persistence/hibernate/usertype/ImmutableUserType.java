@@ -27,14 +27,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import static lombok.AccessLevel.PROTECTED;
+import lombok.NoArgsConstructor;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SessionImplementor;
 import org.hibernate.usertype.UserType;
 
+@NoArgsConstructor(access = PROTECTED)
 public abstract class ImmutableUserType<Value extends Serializable>
     implements UserType {
-
-    protected ImmutableUserType() {}
 
     @Override
     public abstract Class<Value> returnedClass();
@@ -93,6 +94,6 @@ public abstract class ImmutableUserType<Value extends Serializable>
     @Override
     public boolean equals(final Object value1, final Object value2) {
         return value1 == value2 ||
-               value1 != null && value2 != null && value1.equals(value2);
+               value1 != null && value1.equals(value2);
     }
 }

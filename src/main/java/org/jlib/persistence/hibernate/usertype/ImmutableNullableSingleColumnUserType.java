@@ -27,15 +27,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import static lombok.AccessLevel.PROTECTED;
+import lombok.NoArgsConstructor;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.hibernate.HibernateException;
 
-public abstract class ImmutableOptionalSingleColumnUserType<Value extends Serializable>
+@NoArgsConstructor(access = PROTECTED)
+public abstract class ImmutableNullableSingleColumnUserType<Value extends Serializable>
     extends ImmutableSingleColumnUserType<Value> {
 
-    protected ImmutableOptionalSingleColumnUserType() {}
-
     @Override
-    protected final Value nullSafeGet(final ResultSet resultSet, final String[] columnNames)
+    protected final @Nullable Value nullSafeGet(final ResultSet resultSet, final String[] columnNames)
         throws HibernateException, SQLException {
         resultSet.getObject(columnNames[0]);
         if (resultSet.wasNull())
@@ -48,8 +50,7 @@ public abstract class ImmutableOptionalSingleColumnUserType<Value extends Serial
         throws HibernateException, SQLException;
 
     @Override
-    protected final void nullSafeSet(final PreparedStatement preparedStatement, final Value value,
-                                     final int columnIndex)
+    protected final void nullSafeSet(final PreparedStatement preparedStatement, @Nullable final Value value, final int columnIndex)
         throws HibernateException, SQLException {
         if (value == null) {
             preparedStatement.setNull(columnIndex, getSqlType());

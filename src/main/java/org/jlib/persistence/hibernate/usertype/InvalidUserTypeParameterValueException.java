@@ -30,8 +30,7 @@ public class InvalidUserTypeParameterValueException
 
     private static final long serialVersionUID = - 8900643107183979776L;
 
-    public InvalidUserTypeParameterValueException(final Properties parameters, final String parameterName,
-                                                  final Exception cause) {
+    public InvalidUserTypeParameterValueException(final Properties parameters, final String parameterName, final Exception cause) {
         super(parameters, message().with("name", parameterName)
                                    .with("value", parameters.getProperty(parameterName)), cause);
     }

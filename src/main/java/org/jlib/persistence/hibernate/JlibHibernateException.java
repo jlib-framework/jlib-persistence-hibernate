@@ -33,11 +33,11 @@ public class JlibHibernateException
         super(message.toString());
     }
 
-    public JlibHibernateException(final Throwable cause) {
+    public JlibHibernateException(final Exception cause) {
         super(cause);
     }
 
-    public JlibHibernateException(final Message message, final Throwable cause) {
+    public JlibHibernateException(final Message message, final Exception cause) {
         super(message.toString(), cause);
     }
 }
