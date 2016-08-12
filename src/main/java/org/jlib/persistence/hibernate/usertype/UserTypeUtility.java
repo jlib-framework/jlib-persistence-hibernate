@@ -23,9 +23,10 @@ package org.jlib.persistence.hibernate.usertype;
 
 import java.util.Properties;
 
-public final class UserTypeUtility {
+import lombok.experimental.UtilityClass;
 
-    private UserTypeUtility() {}
+@UtilityClass
+public class UserTypeUtility {
 
     public static void assertValidParametersCount(final Properties parameters, final int expectedParametersCount)
         throws InvalidUserTypeParametersCountException {

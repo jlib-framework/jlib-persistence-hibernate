@@ -31,16 +31,11 @@ public abstract class InvalidUserTypeParametersException
 
     private static final long serialVersionUID = 109106908837305142L;
 
-    protected InvalidUserTypeParametersException(final Properties parameters, final Message message,
-                                                 final Exception cause) {
-        super(buildMessage(parameters, message), cause);
+    protected InvalidUserTypeParametersException(final Properties parameters, final Message message, final Exception cause) {
+        super(message.with("parameters", parameters), cause);
     }
 
     protected InvalidUserTypeParametersException(final Properties parameters, final Message message) {
-        super(buildMessage(parameters, message));
-    }
-
-    private static Message buildMessage(final Properties parameters, final Message message) {
-        return message.with("parameters", parameters);
+        super(message.with("parameters", parameters));
     }
 }

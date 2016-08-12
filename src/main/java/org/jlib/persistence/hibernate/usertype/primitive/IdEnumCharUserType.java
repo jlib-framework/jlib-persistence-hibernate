@@ -33,7 +33,7 @@ import org.hibernate.HibernateException;
 import static org.hibernate.type.StandardBasicTypes.CHARACTER;
 import org.hibernate.usertype.ParameterizedType;
 import org.jlib.persistence.IdEnum;
-import org.jlib.persistence.hibernate.usertype.ImmutableOptionalSingleColumnUserType;
+import org.jlib.persistence.hibernate.usertype.ImmutableNullableSingleColumnUserType;
 import org.jlib.persistence.hibernate.usertype.InvalidUserTypeParameterValueException;
 import org.jlib.persistence.hibernate.usertype.InvalidUserTypeParametersException;
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.assertValidParametersCount;
@@ -42,7 +42,7 @@ import org.jlib.reflect.languageelement.ProgramElementException;
 import static org.jlib.reflect.reflector.defaults.Reflectors.useClass;
 
 public class IdEnumCharUserType<EnumValue extends Enum<EnumValue> & IdEnum<Id>, Id extends Serializable>
-    extends ImmutableOptionalSingleColumnUserType<EnumValue>
+    extends ImmutableNullableSingleColumnUserType<EnumValue>
     implements ParameterizedType {
 
     public static final String PARAMETERNAME_ENUM_CLASS_NAME = "enumClassName";

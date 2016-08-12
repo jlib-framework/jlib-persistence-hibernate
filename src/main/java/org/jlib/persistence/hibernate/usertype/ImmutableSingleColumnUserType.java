@@ -23,10 +23,12 @@ package org.jlib.persistence.hibernate.usertype;
 
 import java.io.Serializable;
 
+import static lombok.AccessLevel.PROTECTED;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(access = PROTECTED)
 public abstract class ImmutableSingleColumnUserType<Value extends Serializable>
     extends ImmutableUserType<Value> {
-
-    protected ImmutableSingleColumnUserType() {}
 
     @Override
     public final int[] sqlTypes() {

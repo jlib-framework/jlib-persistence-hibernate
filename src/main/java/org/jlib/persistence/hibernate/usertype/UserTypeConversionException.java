@@ -37,7 +37,7 @@ public class UserTypeConversionException
         super(cause);
     }
 
-    public UserTypeConversionException(final Message message, final Throwable cause) {
+    public UserTypeConversionException(final Message message, final Exception cause) {
         super(message, cause);
     }
 }
