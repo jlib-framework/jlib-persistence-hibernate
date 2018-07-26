@@ -21,30 +21,30 @@
 
 package org.jlib.persistence.hibernate.usertype;
 
-import java.io.Serializable;
+import lombok.NoArgsConstructor;
+import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.usertype.UserType;
 
+import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import static lombok.AccessLevel.PROTECTED;
-import lombok.NoArgsConstructor;
-import org.hibernate.HibernateException;
-import org.hibernate.engine.spi.SessionImplementor;
-import org.hibernate.usertype.UserType;
 
 @NoArgsConstructor(access = PROTECTED)
 public abstract class ImmutableUserType<Value extends Serializable>
-    implements UserType {
+        implements UserType {
 
     @Override
     public abstract Class<Value> returnedClass();
 
     protected abstract Value nullSafeGet(ResultSet resultSet, String[] columnNames)
-        throws HibernateException, SQLException;
+            throws HibernateException, SQLException;
 
     protected abstract void nullSafeSet(PreparedStatement preparedStatement, Value value, int index)
-        throws HibernateException, SQLException;
+            throws HibernateException, SQLException;
 
     @Override
     public Object replace(final Object original, final Object target, final Object owner) {
@@ -58,16 +58,16 @@ public abstract class ImmutableUserType<Value extends Serializable>
 
     @Override
     public Value nullSafeGet(final ResultSet resultSet, final String[] columnNames,
-                             final SessionImplementor sessionImplementor, final Object containingEntity)
-        throws HibernateException, SQLException {
+                             final SharedSessionContractImplementor sessionContractImplementor, final Object containingEntity)
+            throws HibernateException, SQLException {
         return nullSafeGet(resultSet, columnNames);
     }
 
     @Override
     @SuppressWarnings("unchecked")
     public void nullSafeSet(final PreparedStatement preparedStatement, final Object value, final int columnIndex,
-                            final SessionImplementor sessionImplementor)
-        throws HibernateException, SQLException {
+                            final SharedSessionContractImplementor sessionContractImplementor)
+            throws HibernateException, SQLException {
         nullSafeSet(preparedStatement, (Value) value, columnIndex);
     }
 
@@ -94,6 +94,6 @@ public abstract class ImmutableUserType<Value extends Serializable>
     @Override
     public boolean equals(final Object value1, final Object value2) {
         return value1 == value2 ||
-               value1 != null && value1.equals(value2);
+                value1 != null && value1.equals(value2);
     }
 }

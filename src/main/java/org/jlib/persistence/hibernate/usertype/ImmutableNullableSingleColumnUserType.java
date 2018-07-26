@@ -21,23 +21,22 @@
 
 package org.jlib.persistence.hibernate.usertype;
 
-import java.io.Serializable;
+import lombok.NoArgsConstructor;
+import org.hibernate.HibernateException;
 
+import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import static lombok.AccessLevel.PROTECTED;
-import lombok.NoArgsConstructor;
-import org.checkerframework.checker.nullness.qual.Nullable;
-import org.hibernate.HibernateException;
 
 @NoArgsConstructor(access = PROTECTED)
 public abstract class ImmutableNullableSingleColumnUserType<Value extends Serializable>
     extends ImmutableSingleColumnUserType<Value> {
 
     @Override
-    protected final @Nullable Value nullSafeGet(final ResultSet resultSet, final String[] columnNames)
+    protected final /* @Nullable */ Value nullSafeGet(final ResultSet resultSet, final String[] columnNames)
         throws HibernateException, SQLException {
         resultSet.getObject(columnNames[0]);
         if (resultSet.wasNull())
@@ -50,7 +49,7 @@ public abstract class ImmutableNullableSingleColumnUserType<Value extends Serial
         throws HibernateException, SQLException;
 
     @Override
-    protected final void nullSafeSet(final PreparedStatement preparedStatement, @Nullable final Value value, final int columnIndex)
+    protected final void nullSafeSet(final PreparedStatement preparedStatement, /* @Nullable */ final Value value, final int columnIndex)
         throws HibernateException, SQLException {
         if (value == null) {
             preparedStatement.setNull(columnIndex, getSqlType());

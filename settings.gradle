@@ -1,2 +1,4 @@
+rootProject.name = 'jlib-persistence-hibernate'
+
 enableFeaturePreview('STABLE_PUBLISHING')
 enableFeaturePreview('IMPROVED_POM_SUPPORT')
