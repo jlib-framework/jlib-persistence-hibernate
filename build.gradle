@@ -19,7 +19,6 @@
  *     limitations under the License.
  */
 
-
 plugins {
     id 'java'
     id 'base'
@@ -29,5 +28,22 @@ plugins {
     id 'net.researchgate.release' version '2.6.0'
 }
 
+version = '1.0.0-SNAPSHOT'
+
+description = 'jlib Hibernate extension framework'
+ext.detailedDescription = 'jlib framework extending the Hibernate framework'
+
 apply from: 'jlib.gradle'
+
+repositories {
+    mavenLocal()
+}
+
+dependencies {
+    implementation 'org.hibernate:hibernate-core:5.3.3.Final'
+
+    implementation 'org.jlib:jlib-message:1.0.0-SNAPSHOT'
+    implementation 'org.jlib:jlib-exception:1.0.0-SNAPSHOT'
+    implementation 'org.jlib:jlib-reflect:1.0.0-SNAPSHOT'
+}
 

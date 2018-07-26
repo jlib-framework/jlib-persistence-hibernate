@@ -21,24 +21,23 @@
 
 package org.jlib.persistence.hibernate.usertype.primitive;
 
-import java.util.Properties;
-
-import java.io.Serializable;
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import org.hibernate.HibernateException;
-import static org.hibernate.type.StandardBasicTypes.CHARACTER;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.usertype.ParameterizedType;
-import org.jlib.persistence.IdEnum;
 import org.jlib.persistence.hibernate.usertype.ImmutableNullableSingleColumnUserType;
 import org.jlib.persistence.hibernate.usertype.InvalidUserTypeParameterValueException;
 import org.jlib.persistence.hibernate.usertype.InvalidUserTypeParametersException;
+import org.jlib.reflect.languageelement.ProgramElementException;
+
+import java.io.Serializable;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Properties;
+
+import static org.hibernate.type.StandardBasicTypes.CHARACTER;
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.assertValidParametersCount;
 import static org.jlib.persistence.hibernate.usertype.UserTypeUtility.getParameterValue;
-import org.jlib.reflect.languageelement.ProgramElementException;
 import static org.jlib.reflect.reflector.defaults.Reflectors.useClass;
 
 public class IdEnumCharUserType<EnumValue extends Enum<EnumValue> & IdEnum<Id>, Id extends Serializable>
