@@ -6,15 +6,9 @@
     <content url="file://$MODULE_DIR$/../../src/test" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="jlib-persistence-hibernate_main" />
-    <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:5.3.3.Final" level="project" />
-    <orderEntry type="library" name="Gradle: org.jlib:jlib-message:1.0.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Gradle: org.jlib:jlib-exception:1.0.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Gradle: org.jlib:jlib-reflect:1.0.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.1.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.assertj:assertj-core:3.10.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.1.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.8.0-beta2" level="project" />
+    <orderEntry type="library" name="Gradle: org.jlib:jlib-reflect:1.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: dom4j:dom4j:1.6.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.junit.platform:junit-platform-commons:1.1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.hibernate.common:hibernate-commons-annotations:5.0.4.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.jboss.logging:jboss-logging:3.3.2.Final" level="project" />
     <orderEntry type="library" name="Gradle: javax.persistence:javax.persistence-api:2.2" level="project" />
@@ -25,13 +19,18 @@
     <orderEntry type="library" name="Gradle: org.jboss:jandex:2.0.5.Final" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml:classmate:1.3.4" level="project" />
     <orderEntry type="library" name="Gradle: javax.activation:javax.activation-api:1.2.0" level="project" />
-    <orderEntry type="library" name="Gradle: dom4j:dom4j:1.6.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.junit.platform:junit-platform-commons:1.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.assertj:assertj-core:3.10.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.8.0-beta2" level="project" />
     <orderEntry type="library" name="Gradle: org.apiguardian:apiguardian-api:1.0.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.jlib:jlib-value:1.0.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.jlib:jlib-value:1.0.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.0" level="project" />
     <orderEntry type="library" name="Gradle: org.opentest4j:opentest4j:1.0.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.platform:junit-platform-engine:1.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jlib:jlib-exception:1.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:5.3.3.Final" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jlib:jlib-message:1.0.0" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="jlib-persistence-hibernate_main" />
 </module>
